@@ -3,7 +3,7 @@ import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpac
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 
-export function Home(props: any) {
+export default function Home() {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
