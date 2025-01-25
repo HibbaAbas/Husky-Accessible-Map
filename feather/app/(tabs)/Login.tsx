@@ -1,6 +1,6 @@
 
 import {useState} from 'react';
-import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 
@@ -32,6 +32,7 @@ export function Login(props: any) {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <GestureHandlerRootView style={styles.root}>
+            <ImageBackground source={require('../../assets/images/bg_image.png')} style={styles.image}>
                 <View style={styles.container}>
                     <Text style={styles.title}>Login</Text>
                     <Text style={styles.subtitle}>Birds of a feather flock together</Text>
@@ -62,7 +63,9 @@ export function Login(props: any) {
                     <Text style={styles.errorText}>
                         {enter ? "" : "Invalid Username or Password"}
                     </Text>
+                    
                 </View>
+                </ImageBackground>
             </GestureHandlerRootView>
         </TouchableWithoutFeedback>
     );
@@ -76,11 +79,15 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#F6F1E9",
     },
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+    },
     container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#F6F1E9",
     },
     title: {
         fontSize: 50,

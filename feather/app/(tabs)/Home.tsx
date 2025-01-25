@@ -3,14 +3,13 @@ import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpac
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 
+import Map  from '../../components/Maps';
+
 export function Home(props: any) {
 
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-            <GestureHandlerRootView style={styles.root}>
-                <Text>Hello</Text>
-            </GestureHandlerRootView>
-        </TouchableWithoutFeedback>
+        <Map />
+       
     );
 }
 
