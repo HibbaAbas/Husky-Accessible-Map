@@ -15,10 +15,13 @@ export function Login(props: any) {
 
     const [enter, setEnter] = useState(true);
 
+    const navigation = useNavigation();
+
     const loginCheck = () => {
         if (state.email == "student" && state.password == "password") {
             console.log("Entered");
             setEnter(true);
+
         }
         else {
             console.log("Failed");

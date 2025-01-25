@@ -1,16 +1,12 @@
 import { Image, StyleSheet, Platform } from 'react-native';
-
-
-
 import { Login } from './Login';
-
-
-
+import {NavigationContainer} from '@react-navigation/native';
 
 export default function HomeScreen() {
   return (
-    <Login />
-  
+    <NavigationContainer>
+      <Login />
+    </NavigationContainer>
   );
 }
 
