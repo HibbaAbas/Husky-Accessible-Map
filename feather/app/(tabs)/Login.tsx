@@ -2,12 +2,10 @@
 import {useState} from 'react';
 import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpacity, ImageBackground} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {useNavigation} from '@react-navigation/native';
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-
-
-
-export function Login(props: any) {
+export default function Login(props: any) {
     const [state, setState] = useState({
         email: "",
         password: "",
@@ -15,13 +13,13 @@ export function Login(props: any) {
 
     const [enter, setEnter] = useState(true);
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
     const loginCheck = () => {
         if (state.email == "student" && state.password == "password") {
             console.log("Entered");
             setEnter(true);
-
+            navigation.navigate("Home")
         }
         else {
             console.log("Failed");
@@ -57,13 +55,12 @@ export function Login(props: any) {
                             }
                         />
                     </View>
-                    <TouchableOpacity style={styles.loginBtn} onPress={loginCheck}>
+                    <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
                     <Text style={styles.errorText}>
                         {enter ? "" : "Invalid Username or Password"}
                     </Text>
-                    
                 </View>
                 </ImageBackground>
             </GestureHandlerRootView>

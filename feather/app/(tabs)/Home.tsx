@@ -2,19 +2,17 @@ import {useState} from 'react';
 import {Keyboard, TouchableWithoutFeedback, View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
-
 import Map  from '../../components/Maps';
 import Header from '../../components/Header';
 
-export function Home(props: any) {
-
+export default function Home(props: any) {
     return (
+
         <>
             <Header />
             <Map />
         </>
-        
-       
+
     );
 }
 
