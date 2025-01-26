@@ -4,11 +4,16 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 
 import Map  from '../../components/Maps';
+import Header from '../../components/Header';
 
 export function Home(props: any) {
 
     return (
-        <Map />
+        <>
+            <Header />
+            <Map />
+        </>
+        
        
     );
 }
@@ -77,6 +82,12 @@ const styles = StyleSheet.create({
     errorText: {
         color: "red",
     },
+    header: {
+        backgroundColor: "#9d0759",
+        height: 150,
+        justifyContent: "center",
+        alignItems: "center",
+    }
 
 
 });

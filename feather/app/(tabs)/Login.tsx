@@ -79,10 +79,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#F6F1E9",
     },
-    image: {
+    image: { // image could fit screen better
         flex: 1,
-        resizeMode: "cover",
         justifyContent: "center",
+        resizeMode: "contain",
+        height: '80%',
+        width: '80%'
     },
     container: {
         flex: 1,
