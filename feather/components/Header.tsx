@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { AutocompleteDropdown } from "react-native-autocomplete-dropdown";
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export default function Header() {
+    const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
     const data = [
         { id: 1, name: "Husky Union Building" },
         { id: 2, name: "HUB" },
@@ -32,8 +35,8 @@ export default function Header() {
         <View style={styles.header}>
             <TextInput style={styles.searchbar} placeholder="Search here" placeholderTextColor="grey" onChangeText={handleSearch} />
 
-            <Button title="I need help" color="orange" onPress={() => alert("button pressed")} />
-            <Button title="Requests near me" color="orange" onPress={() => alert("button pressed")} />
+            <Button title="I need help" color="orange" onPress={() => navigation.navigate('AssistanceForm')} />
+            <Button title="Requests near me" color="orange" onPress={() => navigation.navigate('RequestList')} />
         </View>
     );
 }

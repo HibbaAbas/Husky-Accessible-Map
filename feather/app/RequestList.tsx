@@ -7,15 +7,36 @@ export default function RequestList() {
   return (
     <>
       <View style={styles.container}>
-        <Text>Request</Text>
-        <Card>
-          <TextRneui h4>Sophia</TextRneui>
-          <TextRneui>Needs help opening ground floor to Mary Gates Hall</TextRneui>
-          <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('RequestList')}>
-            <Text style={styles.loginText}>LEND A WING</Text>
-          </TouchableOpacity>
-        </Card>
-      </View>
+            <Text style={styles.title}>Request</Text>
+            <Card containerStyle={styles.card}>
+                <TextRneui h4 style={styles.cardTitle}>Sophia</TextRneui>
+                <TextRneui style={styles.cardDescription}>
+                    Needs help opening ground floor to Mary Gates Hall
+                </TextRneui>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RequestList')}>
+                    <Text style={styles.buttonText}>LEND A WING</Text>
+                </TouchableOpacity>
+            </Card>
+            <Card containerStyle={styles.card}>
+                <TextRneui h4 style={styles.cardTitle}>Aarnav</TextRneui>
+                <TextRneui style={styles.cardDescription}>
+                    Kane Hall elevator broken; needs to get down stairs and carry DESIGN 166 supplies
+                </TextRneui>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RequestList')}>
+                    <Text style={styles.buttonText}>LEND A WING</Text>
+                </TouchableOpacity>
+            </Card>
+            <Card containerStyle={styles.card}>
+                <TextRneui h4 style={styles.cardTitle}>Ky</TextRneui>
+                <TextRneui style={styles.cardDescription}>
+                    Pain flare up at Sieg Hall; need help getting to Health Center
+                </TextRneui>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RequestList')}>
+                    <Text style={styles.buttonText}>LEND A WING</Text>
+                </TouchableOpacity>
+            </Card>
+        </View>
+        
     </>
   );
 }
@@ -23,40 +44,48 @@ export default function RequestList() {
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      justifyContent: 'center', // Center content vertically
-      alignItems: 'center', // Center content horizontally
-      backgroundColor: '#f8f9fa', // Light background color for a clean look
-      padding: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#f8f9fa',
+      padding: 20,
   },
   title: {
-      fontSize: 40,
+      fontSize: 24,
       fontWeight: 'bold',
-      color: '#333', // Darker text color for readability
-      marginBottom: 20, // Spacing between title and radio buttons
-      textAlign: 'center', // Center align text
+      marginBottom: 20, // Space between the title and the card
+      color: '#333',
   },
-  input: {
-      width: '100%', // Full width for better usability
-      height: 50,
-      borderColor: '#ccc', // Light border color
-      borderWidth: 1,
-      borderRadius: 8, // Rounded corners for modern design
-      paddingHorizontal: 15, // Spacing inside the input
-      backgroundColor: '#fff', // White background for contrast
-      fontSize: 18,
-      color: '#333', // Text color
+  card: {
+      width: '90%', // Make the card responsive
+      padding: 20, // Add padding inside the card
+      borderRadius: 12, // Rounded corners
+      elevation: 5, // Shadow for Android
+      shadowColor: '#000', // Shadow for iOS
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 4,
   },
-  loginBtn: {
-    width: "50%",
-    backgroundColor: "#E8E8E8",
-    borderRadius: 30,
-    height: 45,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-    marginBottom: 10,
+  cardTitle: {
+      marginBottom: 10, // Space between the title and description
+      textAlign: 'center', // Center the title
+      color: '#444',
   },
-  loginText: {
-    color: "black",
+  cardDescription: {
+      marginBottom: 20, // Space between the description and button
+      textAlign: 'center', // Center the description
+      color: '#666',
+      fontSize: 16,
+  },
+  button: {
+      alignSelf: 'center', // Center the button horizontally in the card
+      backgroundColor: '#E5AA7F',
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      borderRadius: 8,
+  },
+  buttonText: {
+      color: '#fff',
+      fontSize: 16,
+      fontWeight: 'bold',
   },
 });

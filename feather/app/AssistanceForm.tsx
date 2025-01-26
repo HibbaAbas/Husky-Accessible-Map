@@ -32,7 +32,6 @@ export default function AssistanceForm() {
     const [selectedValue, setSelectedValue] = useState<string | undefined>('');
     const [otherText, setOtherText] = useState<string>('');
 
-
     return (
       <View style={styles.container}>
       <Text style={styles.title}>How can you be assisted?</Text>
@@ -52,7 +51,7 @@ export default function AssistanceForm() {
               placeholder="Please specify"
           />
       )}
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('RequestList')}>
+      <TouchableOpacity style={styles.loginBtn}>
           <Text style={styles.loginText}>CONTINUE</Text>
       </TouchableOpacity>
       </View>

@@ -55,7 +55,7 @@ export default function Login(props: any) {
                             }
                         />
                     </View>
-                    <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('RequestList')}>
+                    <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>
                     <Text style={styles.errorText}>
@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         resizeMode: "contain",
-        height: '80%',
-        width: '80%'
+        height: '100%',
+        width: '100%'
     },
     container: {
         flex: 1,
